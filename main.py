@@ -3,6 +3,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.action_chains import ActionChains
 
 userInput = input("Enter Something You Want to Buy from Jumia: ")
 
@@ -44,6 +45,22 @@ try:
             print("End of File")
 
     data_file.close()
+
+    # pick = int(input("Pick a Product number You Wish to Buy (Pick 0 for none): "))
+    # number = 1
+    #
+    # if pick > 0:
+    #     for article in articles:
+    #         if number == pick:
+    #             core = article.find_element_by_tag_name("a")
+    #             actions = ActionChains(driver)
+    #             actions.move_to_element(core)
+    #             actions.click()
+    #             actions.perform()
+    #             break
+    #         number = number + 1
+    #
+    #     driver.implicitly_wait(15)
 
 finally:
     driver.quit()
