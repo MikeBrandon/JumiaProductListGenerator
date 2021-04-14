@@ -1,5 +1,6 @@
 from selenium.webdriver.support.ui import WebDriverWait
 
+
 class BasePageElement:
     def __set__(self, instance, value):
         driver = instance.driver

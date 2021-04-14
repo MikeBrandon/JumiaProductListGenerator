@@ -13,7 +13,6 @@ class BasePage:
 
 
 class MainPage(BasePage):
-
     search_text_element = SearchTextElement()
 
     def is_title_matches(self):
