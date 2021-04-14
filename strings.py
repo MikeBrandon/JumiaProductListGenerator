@@ -1,0 +1,6 @@
+CHROME_DRIVER_PATH = "C:\Program Files\chromedriver.exe"
+JUMIA_HOMEPAGE = "https://jumia.co.ke"
+JUMIA_TITLE = "Jumia Kenya | Online Shopping for Groceries, Cleaning Supplies, Home Essentials & more"
+SEARCH_BUTTON_XPATH = "/html/body/div[1]/header/section/div/form/button"
+SEARCH_BOX_XPATH = "/html/body/div[1]/header/section/div/form/div/input"
+CATALOG_XPATH = "/html/body/div[1]/main/div[2]/div[3]/section/div[1]"

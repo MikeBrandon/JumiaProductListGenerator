@@ -4,22 +4,23 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
+import strings
 
 userInput = input("Enter Something You Want to Buy from Jumia: ")
 
-PATH = "C:\Program Files\chromedriver.exe"
+PATH = strings.CHROME_DRIVER_PATH
 driver = webdriver.Chrome(PATH)
 
-driver.get("https://jumia.co.ke")
+driver.get(strings.JUMIA_HOMEPAGE)
 print(driver.title)
 
-search = driver.find_element_by_xpath("/html/body/div[1]/header/section/div/form/div/input")
+search = driver.find_element_by_xpath(strings.SEARCH_BOX_XPATH)
 search.send_keys(userInput)
 search.send_keys(Keys.RETURN)
 
 try:
     catalog = WebDriverWait(driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/main/div[2]/div[3]/section/div[1]"))
+        EC.presence_of_element_located((By.XPATH, strings.CATALOG_XPATH))
     )
 
     articles = catalog.find_elements_by_tag_name("article")
